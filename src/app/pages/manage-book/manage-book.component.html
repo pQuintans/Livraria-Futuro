@@ -1,0 +1,39 @@
+<div class="manage-book-page">
+  <app-navbar></app-navbar>
+  <main>
+    <div class="main-head">
+      <div class="title-area">
+        <h1>{{id == undefined ? "Crie" : "Edite"}} um livro:</h1>
+        <h2>Preencha os campos e clique em salvar</h2>
+      </div>
+    </div>
+    <div class="main-content">
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div class="input-groups">
+          <div class="left-section">
+            <input  formControlName="name" placeholder="Nome do livro" type="text">
+            <input  formControlName="author" placeholder="Autor" type="text">
+            <select [ngClass]="{'placeholder': bookForm.value.category == ''}" formControlName="category" name="categories" id="categories">
+              <option value="" disabled selected hidden>Categoria</option>
+              <option value="ficção">Ficção</option>
+              <option value="fantasia">Fantasia</option>
+              <option value="romance">Romance</option>
+              <option value="mistério">Mistério</option>
+              <option value="null">-</option>
+            </select>
+          </div>
+          <div class="right-section">
+            <input  formControlName="pageTotal" placeholder="Total de páginas" type="number">
+            <div class="isActive">
+              <label for="isActive">Está ativo?</label>
+              <input  formControlName="isActive" type="checkbox" name="isActive" id="isActive" checked>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>

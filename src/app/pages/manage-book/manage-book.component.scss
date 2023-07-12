@@ -1,0 +1,120 @@
+@use '../../../styles.scss';
+
+.manage-book-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  app-navbar {
+    width: 100%;
+  }
+
+  main {
+    align-items: center;
+    background:styles.$gray-100;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1280px;
+    padding: 50px 70px;
+    width: 100%;
+
+    .main-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .title-area {
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        h2 {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .main-content {
+      width: 70%;
+
+      form {
+        .input-groups {
+          display: flex;
+          justify-content: space-around;
+
+          .right-section,
+          .left-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 40%;
+
+            input,
+            select {
+              border: 1px solid styles.$gray-300;
+              border-radius: 10px;
+              background: transparent;
+              width: 100%;
+              padding: 10px 10px 10px 20px;
+              font-size: 1rem;
+
+              &:focus-visible {
+                outline: none;
+              }
+
+              &.placeholder {
+                color: styles.$gray-600;
+              }
+
+              &[name="categories"]:focus {
+                color: unset;
+              }
+            }
+
+            .isActive {
+              align-items: center;
+              display: flex;
+              gap: 10px;
+              justify-content: center;
+              padding: 10px;
+
+              input {
+                -webkit-appearance: checkbox;
+                width: unset;
+              }
+            }
+          }
+        }
+
+        .footer {
+          display: flex;
+          justify-content: flex-end;
+
+          button {
+            background:styles.$gray-400;
+            border: none;
+            border-radius: 5px;
+            color: styles.$gray-900;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 5px 10px;
+            transition: background linear .2s;
+
+            &:hover {
+              background:styles.$gray-500;
+            }
+          }
+        }
+      }
+    }
+
+    .main-footer {
+      display: flex;
+      justify-content: flex-end;
+      width: 90%;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@use '../../../styles.scss';
+
+.login-page {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .login-container {
+    align-items: center;
+    background: styles.$gray-100;
+    border: 1px solid styles.$gray-300;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px 50px 30px;
+    width: 350px;
+
+    a {
+      align-items: center;
+      color: styles.$blue-400;
+      display: flex;
+      margin-bottom: 20px;
+      text-align: left;
+      text-decoration: none;
+      width: 100%;
+
+      i-feather {
+        margin-right: 5px;
+        stroke-width: 1.5px;
+      }
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      margin-bottom: 40px;
+      color: styles.$gray-900;
+      width: 250px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+      width: 100%;
+
+      input {
+        border: 1px solid styles.$gray-300;
+        border-radius: 10px;
+        background: transparent;
+        width: 100%;
+        padding: 10px 10px 10px 20px;
+        font-size: 1rem;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+
+      button {
+        background: styles.$blue-400;
+        border: none;
+        border-radius: 10px;
+        color: styles.$gray-100;
+        cursor: pointer;
+        margin: 10px 0 0 0;
+        padding: 5px 50px;
+        transition: background linear .2s;
+        width: 50%;
+
+        &:hover {
+          background: styles.$blue-700;
+        }
+      }
+    }
+  }
+}

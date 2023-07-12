@@ -1,0 +1,10 @@
+<header>
+  <div class="content">
+    <h1 (click)="goToLanding()">Livraria futuro</h1>
+    <button *ngIf="user == undefined" (click)="goToLogin()">Login</button>
+    <div *ngIf="user">
+      <h2>Bem vindo, {{user.name}}</h2>
+      <button class="alternative" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</header>

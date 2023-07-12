@@ -1,0 +1,15 @@
+<div class="login-page">
+  <div class="login-container">
+    <a [routerLink]="['/']">
+      <i-feather name="arrow-left"></i-feather>
+      Voltar
+    </a>
+    <h1>Fazer Login</h1>
+    <h2>Insira seus dados para entrar no sistema</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="authenticate()">
+      <input placeholder="Login" type="email" id="email" formControlName="email"/>
+      <input placeholder="Senha" type="password" id="password"  formControlName="password"/>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+</div>

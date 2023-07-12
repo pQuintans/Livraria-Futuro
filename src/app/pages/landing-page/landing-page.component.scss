@@ -1,0 +1,201 @@
+@use '../../../styles.scss';
+
+.landing-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  app-navbar {
+    width: 100%;
+  }
+
+  main {
+    align-items: center;
+    background: styles.$gray-100;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1280px;
+    padding: 50px 70px;
+    width: 100%;
+
+    .main-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .title-area {
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        h2 {
+          font-size: 1rem;
+        }
+      }
+
+      .search-input {
+        display: flex;
+        background: styles.$gray-100;
+        border-radius: 10px;
+        border: 2px solid styles.$gray-400;
+        width: 100%;
+        max-width: 500px;
+
+        input {
+          border: none;
+          background: transparent;
+          width: 100%;
+          padding: 10px 10px 10px 20px;
+          font-size: 1rem;
+
+          &:focus-visible {
+            outline: none;
+          }
+        }
+
+        button {
+          background: styles.$gray-400;
+          border: none;
+          border-radius: 0 5px 5px 0;
+          cursor: pointer;
+          margin-left: 10px;
+          padding: 5px 10px;
+          transition: background linear .2s;
+
+          &:hover {
+            background: styles.$gray-500;
+          }
+        }
+      }
+
+      .filter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 300px;
+
+        .filter-button {
+          background: styles.$gray-100;
+          border: none;
+          border-radius: 10px;
+          padding: 5px 10px;
+          cursor: pointer;
+          width: 100%;
+          text-align: left;
+        }
+      }
+    }
+
+    .main-content {
+      width: 90%;
+
+      thead {
+        background-color: styles.$gray-400;
+        border-radius: 10px 10px 0 0;
+
+        th {
+          padding: 10px 0;
+          width: 20%;
+
+          &.small {
+            width: 10%
+          }
+
+          &:first-child {
+            border-radius: 10px 0 0 0;
+            width: 30%;
+          }
+
+          &:last-child {
+            border-radius: 0 10px 0 0;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          background: styles.$gray-200;
+
+          &:nth-child(even) {
+            background-color: styles.$gray-300;
+          }
+
+          &:last-of-type {
+            td {
+              &:first-child {
+                border-radius: 0 0 0 10px;
+              }
+
+              &:last-child {
+                border-radius: 0 0 10px 0;
+              }
+            }
+          }
+
+          td {
+            padding: 10px 0;
+            text-align: center;
+            text-transform: capitalize;
+
+            i-feather {
+              cursor: pointer;
+              height: 15px;
+              transition: color linear .2s;
+              width: 15px;
+
+              &.disabled {
+                color: styles.$gray-500;
+                cursor: not-allowed;
+
+                &:hover {
+                  color: styles.$gray-500
+                }
+              }
+
+              &:first-child {
+                margin-right: 10px;
+              }
+
+              &:hover {
+                color: styles.$gray-900
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .empty-list {
+      background: styles.$gray-200;
+      border-radius: 10px;
+      margin-top: 30px;
+      padding: 20px 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    .main-footer {
+      display: flex;
+      justify-content: flex-end;
+      width: 90%;
+
+      button {
+        background: styles.$gray-400;
+        border: none;
+        border-radius: 5px;
+        color: styles.$gray-900;
+        cursor: pointer;
+        padding: 5px 10px;
+        transition: background linear .2s;
+
+        &:hover {
+          background: styles.$gray-500;
+        }
+      }
+    }
+  }
+}

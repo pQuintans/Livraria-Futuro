@@ -1,0 +1,46 @@
+<div class="landing-page">
+  <app-navbar></app-navbar>
+  <main>
+    <div class="main-head">
+      <div class="title-area">
+        <h1>Nossos Livros:</h1>
+        <h2>Confira os livros disponíveis no nosso acervo</h2>
+      </div>
+      <div class="search-input">
+        <input type="text" [(ngModel)]="filter">
+        <button (click)="filterBooks()">Filtrar</button>
+      </div>
+    </div>
+    <table class="main-content" *ngIf="filteredBooks.length > 0; else EmptyList">
+      <thead>
+        <th>Nome</th>
+        <th>Autor</th>
+        <th>Categoria</th>
+        <th class="small">Páginas</th>
+        <th class="small" *ngIf="user != undefined">Situação</th>
+        <th class="small" *ngIf="user != undefined"></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of filteredBooks">
+          <td>{{book.name}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.category ? book.category : "-"}}</td>
+          <td>{{book.pageTotal}}</td>
+          <td *ngIf="user != undefined">{{book.isActive == true ? "Ativo" : "Inativo"}}</td>
+          <td *ngIf="user != undefined">
+            <i-feather name="edit" (click)="editBook(book)"></i-feather>
+            <i-feather [ngClass]="{'disabled': !book.isActive}" (click)="deleteBook(book)" name="trash"></i-feather>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #EmptyList>
+      <div class="empty-list">
+        Nenhum livro encontrado no nosso sistema.
+      </div>
+    </ng-template>
+    <div class="main-footer" *ngIf="user != undefined">
+      <button (click)="createBook()">Criar novo livro</button>
+    </div>
+  </main>
+</div>

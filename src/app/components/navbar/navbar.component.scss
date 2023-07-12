@@ -1,0 +1,52 @@
+@use '../../../styles.scss';
+
+header {
+  background-color:styles.$gray-300;
+  display: flex;
+  justify-content: center;
+  padding: 20px 30px;
+  width: 100%;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1280px;
+    width: 100%;
+
+    h1 {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    button {
+      background: styles.$blue-400;
+      border: none;
+      border-radius: 10px;
+      color:styles.$gray-100;
+      cursor: pointer;
+      margin: 0;
+      padding: 5px 50px;
+      transition: background linear .2s;
+
+      &:hover {
+        background: styles.$blue-700;
+      }
+
+      &.alternative {
+        color: styles.$gray-900;
+        background:styles.$gray-100;
+        outline: 1px solid styles.$gray-900;
+
+        &:hover {
+          background: #eae9e9;
+        }
+      }
+    }
+  }
+}
